@@ -18,7 +18,8 @@ module.exports = function(config) {
       'lib/angular.min.js',
       'lib/angular-mocks.js',
       'app/*.js',
-      'tests/*.js'
+      'tests/*.js',
+      'app/templates/*.html'
     ],
 
 
@@ -26,11 +27,27 @@ module.exports = function(config) {
     exclude: [
     ],
 
+    //plugins: [
+    //  'karma-phantomjs-launcher',
+    //  'karma-jasmine',
+    //  'karma-ng-html2js-preprocessor'
+    //],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      "app/templates/**/*.html": ["ng-html2js"]
     },
+
+    //ngHtml2JsPreprocessor: {
+    //  // If your build process changes the path to your templates,
+    //  // use stripPrefix and prependPrefix to adjust it.
+    //  //stripPrefix: "app/templates/.*/",
+    //  //prependPrefix: "web/path/to/templates/",
+    //  stripPrefix: 'app/',
+    //  // the name of the Angular module to create
+    //  moduleName: "my.templates"
+    //},
 
 
     // test results reporter to use
