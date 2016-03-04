@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body ng-controller="CalculatorController as vm">
 
-<!--<my-directive></my-directive>-->
-
+<my-directive card-title="test-title" data="{'aaa':'bbb'}" exploreLink="google.com"></my-directive>
+    <pre>
+        {{vm.z}}
+    </pre>
 <script src="lib/angular.min.js"></script>
 <script src="lib/angular-mocks.js"></script>
 
